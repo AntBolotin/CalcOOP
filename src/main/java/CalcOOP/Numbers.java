@@ -6,7 +6,7 @@ public class Numbers {
 
 /// Конструктор для ввода чисел
 
-    public  Numbers (double firstNumber, double secondNumber) {
+    public Numbers(double firstNumber, double secondNumber) {
         this.firstNumber = firstNumber;
         this.secondNumber = secondNumber;
     }
@@ -37,18 +37,21 @@ public class Numbers {
         return plus;
     }
 
-    public double getMinus () {
+    public double getMinus() {
         double minus = this.firstNumber - this.secondNumber;
         return minus;
     }
 
-    public double getMultipltcation () {
+    public double getMultipltcation() {
         double multipltcation = this.firstNumber * this.secondNumber;
         return multipltcation;
     }
 
-    public double getDivide () {
-        double divide = this.firstNumber / this.secondNumber;
-        return divide;
+    public double getDivide() throws ArithmeticException {
+        if (secondNumber == 0) {
+            throw new ArithmeticException("ArithmeticException: на ноль делить нельзя");
+        }
+       return  this.firstNumber / this.secondNumber;
     }
+
 }
